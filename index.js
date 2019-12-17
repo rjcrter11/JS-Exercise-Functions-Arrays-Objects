@@ -243,8 +243,8 @@ function getModelYears(arr) {
 function getOlderCars(arr, max) {
   const oldCarYear = [];
   for (let i = 0; i < arr.length; i++) {
-    if (arr[arr.car_year] <= max) {
-      oldCarYear.push(arr[arr.car_year]);
+    if (arr[i].car_year <= max) {
+      oldCarYear.push(arr[i]);
     }
   }
   return oldCarYear
@@ -264,9 +264,12 @@ function getOlderCars(arr, max) {
 function getGermanCars(array) {
   const germanCars = [];
   for (let i = 0; i < array.length; i++) {
-    if (array.car_make == 'Audi' || array.car_make == 'Mercedes-Benz' || array.car_make == 'Volkswagen') {
-      germanCars.push(array.car_make);
+
+    if (array[i].car_make === 'Audi' || array[i].car_make === 'Mercedes-Benz' || array[i].car_make === 'Volkswagen' || array[i].car_make === 'BMW') {
+      germanCars.push(array[i]);
+
     }
+
   }
   return germanCars
 }
@@ -289,9 +292,15 @@ function getGermanCars(array) {
  *   return num * 2
  * }
 */
-const sum = null; // code here!
-const addFive = null; // code here!
-const argTimesTwo = null; // code here!
+const sum = (a, b) => {
+  return a + b;
+}
+const addFive = (num) => {
+  return num + 5;
+}
+const argTimesTwo = (num) => {
+  return num * 2;
+}
 
 /**
  * ### Challenge `carMaker`
