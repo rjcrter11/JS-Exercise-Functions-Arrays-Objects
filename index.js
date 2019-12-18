@@ -40,10 +40,14 @@ function addNumbers(num1, num2) {
  * }
 */
 function makePersonObject(id, name, email) {
-  return { id, name, email };
+  return {
+    id: id,
+    name: name,
+    email: email
+  };
 
 }
-console.log(makePersonObject(6, "Bob", "bob@bob.com"))
+
 /**
  * ### Challenge `getName`
  * 
@@ -60,8 +64,8 @@ console.log(makePersonObject(6, "Bob", "bob@bob.com"))
 function getName(name) {
   return `Hello, my name is ${name.name}`
 }
-getName({ name: "Luke" });
-console.log(getName({ id: 2, name: 'Luke', email: 'luke@luke.com' }));
+
+
 
 
 /**
@@ -78,7 +82,7 @@ console.log(getName({ id: 2, name: 'Luke', email: 'luke@luke.com' }));
  *         where `{name}` is the name passed into `makeSmartPerson`.
 */
 function makeSmartPerson(name) {
-  return {
+  const person = {
     name: name,
     sum: function (num1, num2) {
       return num1 + num2
@@ -88,9 +92,9 @@ function makeSmartPerson(name) {
     }
 
   }
-
+  return person;
 }
-console.log(makeSmartPerson('Luke'));
+
 
 
 
@@ -187,7 +191,7 @@ function getLastCarInfo(inventory) {
  * it will return `This is a Lincoln Navigator`.
 */
 function getCarInfoById(arr, index) {
-  const { car_make, car_model } = arr[index];
+
 
   const identity = arr[index - 1];
 
@@ -315,8 +319,15 @@ const argTimesTwo = (num) => {
  *         (1) causes the odometer in the object to be increased by the distance,
  *         (2) returns the updated value of the `odometer`.
 */
-function carMaker(/* code here */) {
-  /* code here */
+function carMaker(num) {
+  const car = {
+    odometer: num,
+    drive: function (dist) {
+      return car.odometer += dist;
+    }
+
+  };
+  return car;
 }
 
 /// ////// END OF CHALLENGE /////////
